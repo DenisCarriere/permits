@@ -7,7 +7,9 @@ from pymongo import MongoClient
 
 # Create Mongo connection
 client = MongoClient()
-db = client.geocoder.google
+provider = 'google'
+db = client.geocoder[provider]
+path = '/home/ubuntu/GIS/{0}.shp'.format(provider)
 
 # Build container with all the features of MongoDB
 print 'Building container...'
@@ -31,12 +33,12 @@ properties.update({
     'VALUE':'int',
     'PERMIT':'int',
     'housenumber':'int',
+    'DU':'int',
 })
 # Fiona input for schema must be a list
 properties = list(properties.items())
 
 # Shapefile parameters
-path = '/home/denis/shapefile/google.shp'
 crs = {'init':'epsg:4326'}
 driver = 'ESRI Shapefile'
 encoding = 'utf-8'

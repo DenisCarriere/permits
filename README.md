@@ -26,10 +26,9 @@ Formats
 -------
 
 - [MongoDB]
+- Shapefile
 - CSV
-- JSON
-- SQLite
-- PostgreSQL
+- GeoJSON
 
 Extra Help
 ----------
