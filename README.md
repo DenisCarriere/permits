@@ -5,6 +5,8 @@ OpenData is nice to have, however many of the times it needs a lot of work befor
 "Useful" data. This GitHub page shows you all the data transformations that was used when processing
 data collected from the City of Ottawa's Data Cataloge.
 
+![Overview]
+
 City of Ottawa Permits
 ----------------------
 
@@ -26,9 +28,9 @@ Formats
 -------
 
 - [MongoDB]
-- Shapefile
-- CSV
-- GeoJSON
+- [Shapefile]
+- [CSV]
+- [GeoJSON]
 
 Extra Help
 ----------
@@ -37,7 +39,10 @@ Extra Help
 - City of Ottawa - [LICENSE]
 - [OpenRefine]
 
-
+[Overview]: https://raw.githubusercontent.com/DenisCarriere/permits/master/Images/Overview.png
+[Shapefile]: https://github.com/DenisCarriere/permits/raw/master/Shapefile/permits.shp.zip
+[GeoJSON]: https://github.com/DenisCarriere/permits/raw/master/GeoJSON/permits.json.zip
+[CSV]: https://github.com/DenisCarriere/permits/raw/master/CSV/permits.csv.zip
 [#1]: https://github.com/DenisCarriere/permits/issues/1
 [#2]: https://github.com/DenisCarriere/permits/issues/2
 [#3]: https://github.com/DenisCarriere/permits/issues/3
