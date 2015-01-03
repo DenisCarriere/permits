@@ -7,6 +7,8 @@ data collected from the City of Ottawa's Data Cataloge.
 
 ![Overview]
 
+**Download [Shapefile]**
+
 City of Ottawa Permits
 ----------------------
 
@@ -27,10 +29,10 @@ Transformations
 Formats
 -------
 
-- [MongoDB]
 - [Shapefile]
 - [CSV]
 - [GeoJSON]
+- [MongoDB]
 
 Extra Help
 ----------
