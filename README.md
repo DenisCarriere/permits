@@ -19,20 +19,19 @@ Construction, Demolition, Pool Enclosure Permits
 - [2013]
 - [2014] 
 
+Download
+--------
+
+- [Shapefile]
+- [CSV]
+- [GeoJSON]
+
 Transformations
 ---------------
 
 - Standard Fieldnames [#4], [#5], [#12], [#14]
 - Clean Values [#9], [#10], [#11], [#13]
 - Standard Filename [#6], [#7], [#8]
-
-Formats
--------
-
-- [Shapefile]
-- [CSV]
-- [GeoJSON]
-- [MongoDB]
 
 Extra Help
 ----------
