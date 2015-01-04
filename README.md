@@ -29,6 +29,9 @@ Download
 Transformations
 ---------------
 
+- Geo-reference Data [#2]
+- Add confidence score [#18]
+- Convert to Integer [#17]
 - Standard Fieldnames [#4], [#5], [#12], [#14]
 - Clean Values [#9], [#10], [#11], [#13]
 - Standard Filename [#6], [#7], [#8]
@@ -58,6 +61,10 @@ Extra Help
 [#12]: https://github.com/DenisCarriere/permits/issues/12
 [#13]: https://github.com/DenisCarriere/permits/issues/13
 [#14]: https://github.com/DenisCarriere/permits/issues/14
+[#15]: https://github.com/DenisCarriere/permits/issues/15
+[#16]: https://github.com/DenisCarriere/permits/issues/16
+[#17]: https://github.com/DenisCarriere/permits/issues/17
+[#18]: https://github.com/DenisCarriere/permits/issues/18
 
 [2011]: https://github.com/DenisCarriere/permits/tree/master/CSV/2011
 [2012]: https://github.com/DenisCarriere/permits/tree/master/CSV/2012
