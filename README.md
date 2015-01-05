@@ -23,6 +23,8 @@ Download
 --------
 
 - [Shapefile]
+- [Excel]
+- [KML]
 - [CSV]
 - [GeoJSON]
 
@@ -44,9 +46,11 @@ Extra Help
 - [OpenRefine]
 
 [Overview]: https://raw.githubusercontent.com/DenisCarriere/permits/master/Images/Overview.png
-[Shapefile]: https://github.com/DenisCarriere/permits/raw/master/Shapefile/permits.shp.zip
-[GeoJSON]: https://github.com/DenisCarriere/permits/raw/master/GeoJSON/permits.json.zip
-[CSV]: https://github.com/DenisCarriere/permits/raw/master/CSV/permits.csv.zip
+[Shapefile]: https://github.com/DenisCarriere/permits/raw/master/Download/permits.shp.zip
+[GeoJSON]: https://github.com/DenisCarriere/permits/raw/master/Download/permits.geojson.zip
+[Excel]: https://github.com/DenisCarriere/permits/raw/master/Download/permits.xls.zip
+[KML]: https://github.com/DenisCarriere/permits/raw/master/Download/permits.kml.zip
+[CSV]: https://github.com/DenisCarriere/permits/raw/master/Download/permits.csv.zip
 [#1]: https://github.com/DenisCarriere/permits/issues/1
 [#2]: https://github.com/DenisCarriere/permits/issues/2
 [#3]: https://github.com/DenisCarriere/permits/issues/3
