@@ -24,7 +24,7 @@ def confidence_score(km):
     # Cannot determine score
     return 0
 
-for provider in ['bing','google','nokia','osm','arcgis']:
+for provider in ['google']:
     for item in db[provider].find({'properties.confidence':{'$not':{'$gte':0}}}):
         bbox = item.get('bbox')
         confidence = 0

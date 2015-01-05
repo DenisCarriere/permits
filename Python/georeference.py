@@ -41,7 +41,7 @@ for item in container:
         if not location in container_geocoder:
 
             # Geocode address
-            g = geocoder.get(location, provider=provider, timeout=2.0)
+            g = geocoder.get(location, provider=provider, timeout=15.0)
 
             # Append all Attributes with Geocode + Permits
             geojson = g.geojson
@@ -50,13 +50,19 @@ for item in container:
             # Break if OVER QUERY using Google
             if g.status in ['OVER_QUERY_LIMIT']:
                 print 'Over QUERY'
+                exit()
                 os.system('nmcli con down id CyberGhost')
                 time.sleep(60*5)
                 print 'Shuting Down CyberGhost...'
                 os.system('nmcli con up id CyberGhost')
                 time.sleep(10)
                 print 'Cyberghost Active!'
-            else:
+            elif g.status in ['ZERO_RESULTS']:
+                db_geocoder.insert(geojson)
+                print provider, 'Added ZERO:', location
+            elif g.ok:
                 # Add data in Mongo Database
                 db_geocoder.insert(geojson)
                 print provider, 'Added:', location
+            else:
+                print 'Fail:',g, location

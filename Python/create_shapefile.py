@@ -14,7 +14,7 @@ path = '/home/ubuntu/GIS/{0}.shp'.format(provider)
 # Build container with all the features of MongoDB
 print 'Building container...'
 container = []
-for item in db.find({},{'_id':0}):
+for item in db.find({'geometry':{'$exists':True}},{'_id':0}):
     container.append(item)
 
 # Get all attributes
@@ -29,8 +29,14 @@ for item in container:
 # Only define the Integer fields, the rest will be Strings
 properties.update({
     'FT2':'int',
+    'FT2_unit':'int',
+    'TOTAL_unit':'int',
+    'COST_unit': 'float',
+    'lat': 'float',
+    'lng': 'float',
     'year':'int',
     'VALUE':'int',
+    'VALUE_unit': 'int',
     'PERMIT':'int',
     'housenumber':'int',
     'DU':'int',
@@ -66,6 +72,9 @@ with fiona.open(
         baseline = blank
         baseline.update(item.get('properties'))
         item['properties'] = baseline
-        sink.write(item)
-
+        try:
+            sink.write(item)
+        except:
+            print item
+            exit()
 print 'Done!'
