@@ -11,6 +11,8 @@ lookup_suffix = {
     'DR.': 'Drive',
     'PL': 'Place',
     'CIR': 'Circle',
+    'CIRC': 'Circle',
+    'CREEK': 'Creek',
     'PRIV': 'Private',
     'RD': 'Road',
     'RD.': 'Road',
@@ -40,6 +42,13 @@ lookup_suffix = {
     'STE': 'Saint',
     'STE.': 'Saint',
     'PKY': 'Parkway',
+    'GROVE': 'Grove',
+    'WAY': 'Way',
+    'RIDGE': 'Ridge',
+    'LANE': 'Lane',
+    'SIDE': 'Side',
+    'PARK': 'Park',
+    'CREST': 'Crest',
 }
 
 lookup_direction = {
@@ -60,13 +69,18 @@ def search(line, lookup):
             return lookup[word]
 
 def strip_road(line, lookup):
-    line = line.split(' ')
-    for word in line:
+    container = []
+    words = line.split(' ')
+    for word in words:
         word = word.upper()
-        if word in lookup:
-            line.pop(line.index(word))
-    if line:
-        return ' '.join(line).strip()
+        if not word in lookup:
+            container.append(word)
+    if len(container) > 1:
+        return ' '.join(container)
+    else:
+        # Only return the first word
+        if words:
+            return words[0] 
 
 
 for item in client.ottawa.permits.find({}):
@@ -81,6 +95,5 @@ for item in client.ottawa.permits.find({}):
         if direction:
             item['direction'] = direction
         if route:
-            item['route'] = route
-
+            item['route'] = route.title()
         client.ottawa.permits.save(item)
