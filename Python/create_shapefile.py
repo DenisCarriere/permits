@@ -69,12 +69,9 @@ with fiona.open(
     encoding=encoding) as sink:
     for item in container:
         # Ensures Blank fields for the schema
-        baseline = blank
+        baseline = {}
+        baseline.update(blank)
         baseline.update(item.get('properties'))
         item['properties'] = baseline
-        try:
-            sink.write(item)
-        except:
-            print item
-            exit()
+        sink.write(item)
 print 'Done!'

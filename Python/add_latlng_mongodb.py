@@ -3,7 +3,7 @@ from pymongo import MongoClient
 client = MongoClient()
 
 
-for provider in ['osm','opencage','arcgis','bing','google','nokia','mapquest','tomtom']:
+for provider in ['google']:
     db = client.geocoder[provider]
     for item in db.find({}):
         geom = item.get('geometry')
