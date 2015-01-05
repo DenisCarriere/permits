@@ -37,7 +37,6 @@ lookup_suffix = {
     'HGTS': 'Heights',
     'SQ': 'Square',
     'ST': 'Street',
-    'ST.': 'Street',
     'PKWY': 'Parkway',
     'STE': 'Saint',
     'STE.': 'Saint',
@@ -69,13 +68,13 @@ def search(line, lookup):
             return lookup[word]
 
 def strip_road(line, lookup):
-    container = []
     words = line.split(' ')
-    for word in words:
+    container = [words[0]]
+    for word in words[1:]:
         word = word.upper()
         if not word in lookup:
             container.append(word)
-    if len(container) > 1:
+    if container:
         return ' '.join(container)
     else:
         # Only return the first word
