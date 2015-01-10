@@ -9,7 +9,7 @@ client = MongoClient()
 if client.ottawa.permits.count():
     print 'WARNING: Any existing MongoDB data is getting deleted...'
     client.ottawa.permits.remove({})
-base_path = '/home/ubuntu/Github/permits/CSV/{year}/'
+base_path = '/home/denis/Github/permits/CSV/{year}/'
 base_path += 'Construction-Demolition-Pool-Enclosure-Permits-{month}-{year}.csv'
 years = [2011, 2012, 2013, 2014]
 months = [

@@ -1,6 +1,15 @@
+#!/usr/bin/python
+# coding: utf8
 from pymongo import MongoClient
 import os
 
+"""
+Adding Attributes
+=================
+- road
+- suffix
+- direction
+"""
 
 client = MongoClient()
 
@@ -93,6 +102,6 @@ for item in client.ottawa.permits.find({}):
             item['suffix'] = suffix
         if direction:
             item['direction'] = direction
-        if route:
-            item['road'] = road.title()
+        if road:
+            item['road'] = road.capitalize()
         client.ottawa.permits.save(item)
