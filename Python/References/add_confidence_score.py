@@ -2,7 +2,7 @@ from pymongo import MongoClient
 from haversine import haversine
 
 client = MongoClient()
-db = client.geocoder
+db = client.ottawa.geocoder
 
 def confidence_score(km):
     # Score is less than maximum

@@ -7,9 +7,8 @@ from pymongo import MongoClient
 
 # Create Mongo connection
 client = MongoClient()
-provider = 'google'
-db = client.geocoder[provider]
-path = '/home/ubuntu/GIS/{0}.shp'.format(provider)
+db = client.ottawa.geocoder
+path = '/home/denis/GIS/permits.shp'
 
 # Build container with all the features of MongoDB
 print 'Building container...'
@@ -29,14 +28,10 @@ for item in container:
 # Only define the Integer fields, the rest will be Strings
 properties.update({
     'FT2':'int',
-    'FT2_unit':'int',
-    'TOTAL_unit':'int',
-    'COST_unit': 'float',
     'lat': 'float',
     'lng': 'float',
     'year':'int',
     'VALUE':'int',
-    'VALUE_unit': 'int',
     'PERMIT':'int',
     'housenumber':'int',
     'DU':'int',

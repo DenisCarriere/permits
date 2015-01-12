@@ -26,7 +26,7 @@ for item in client.ottawa.permits.find({}):
     if direction:
         location.append(direction)
 
-    item['location'] = ' '.join(location) + ', Ottawa'
+    item['location'] = ' '.join(location) + ', Ottawa, ON'
 
     # Save MongoClient
     client.ottawa.permits.save(item)
