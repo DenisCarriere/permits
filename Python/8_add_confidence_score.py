@@ -2,7 +2,8 @@ from pymongo import MongoClient
 from haversine import haversine
 
 client = MongoClient()
-db = client.ottawa.geocoder
+db = client.geocoder.google
+
 
 def confidence_score(km):
     # Score is less than maximum
@@ -24,7 +25,7 @@ def confidence_score(km):
     # Cannot determine score
     return 0
 
-for item in db.find({'properties.confidence':{'$not':{'$gte':0}}}):
+for item in db.find({'properties.confidence':{'$exists': False}}):
     bbox = item.get('bbox')
     confidence = 0
     if bbox:
