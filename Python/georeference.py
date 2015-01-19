@@ -46,7 +46,9 @@ for item in container:
             # Geocode address
             g = geocoder.get(location, provider=provider, timeout=15.0)
             result = g.geojson
-            result['properties']['location'] = previous_location
+            
+            if provider == 'ottawa':
+                result['properties']['location'] = previous_location
 
             # Break if OVER QUERY using Google
             if g.status in ['OVER_QUERY_LIMIT']:
